@@ -37,7 +37,7 @@ var2 = (-b - кв.корень(d))/2a
 - resolve_equation(-1, -2, 15) -> (64, 2, -5, 3)
 - resolve_equation(1, 12, 36) -> (0, 1, -6, None)
 """
-
+from math import sqrt
 
 def resolve_equation(a: float, b: float, c: float) -> tuple:
     """Решает квадратное уравнение, возвращает дискриминант и корни уравнения
@@ -55,6 +55,15 @@ def resolve_equation(a: float, b: float, c: float) -> tuple:
     n_var = None
     var1 = None
     var2 = None
+
+    d = b**2 - 4 * a * c
+    if d > 0:
+        var1 = (-b + sqrt(d)) / (2 * a)
+        var2 = (-b - sqrt(d)) / (2 * a)
+        n_var = 2
+    elif d == 0:
+        var1 = (-b + sqrt(d)) / (2 * a)
+        n_var = 1
     return d, n_var, var1, var2
 
 
