@@ -32,10 +32,10 @@ def lets_break(n: int) -> int:
     counter = 0
     while True:
         # TODO тут написать код
-        counter += 1
-        current_value += 1
         if current_value >= 10:
             break
+        counter += 1
+        current_value += 1
     return counter
 
 
