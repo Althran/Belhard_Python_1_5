@@ -46,7 +46,10 @@ def is_valid(check_string: str) -> bool:
         идентификатором и не ключевым словом или нет
     :rtype: bool
     """
-    # TODO написать свой код здесь
+    if iskeyword(check_string) and check_string.isidentifier():
+        return False
+    else:
+        return True
     return None
 
 
