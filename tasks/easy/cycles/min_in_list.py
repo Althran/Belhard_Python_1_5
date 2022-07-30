@@ -14,7 +14,12 @@ min_in_list([7, 2, 4, 6, 1, 4]) -> 1
 
 def min_in_list(some_list: list) -> int:
     min_value = None
-    # TODO Написать свой код здесь
+    for i in some_list:
+        if min_value is None:
+            min_value = i
+        elif min_value > i:
+            min_value = i
+
     return min_value
 
 

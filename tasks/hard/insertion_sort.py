@@ -21,7 +21,14 @@
 
 
 def insertion_sort(array: list) -> list:
-    pass
+    for i in range(1, len(array)):
+        number = array[i]
+        j = i - 1
+        while j >= 0 and array[j] > number:
+            array[j + 1] = array[j]
+            j -= 1
+        array[j + 1] = number
+    return array
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@
 - ('как у тебя дела', 'у тебя', 'твои') -> 'Как твои дела'
 - ('что делаешь', 'ты', 'мы') -> 'Ошибка!'
 """
-
+import re
 
 def replacer(check_str: str, search_str: str, replace_str: str) -> str:
     """Если search_str есть в check_str, то заменяет на replace_str,
@@ -33,6 +33,11 @@ def replacer(check_str: str, search_str: str, replace_str: str) -> str:
     :rtype: str
     """
     result = None
+    if search_str in check_str:
+        result = re.sub(search_str, replace_str, check_str)
+        result = result.capitalize()
+    else:
+        result = "Ошибка!"
     return result
 
 
